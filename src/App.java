@@ -7,36 +7,34 @@ public class App {
         ArrayList<Integer> lista2 = new ArrayList<Integer>(10);
         ArrayList<Integer> lista3 = new ArrayList<Integer>();
 
-
-        //* PREENCHER */
+        // * PREENCHER */
         preencherLista(lista1);
         preencherLista(lista2);
 
         System.out.println("Lista 1: " + lista1);
         System.out.println("Lista 2: " + lista2);
 
-        //* ORDENAR */
+        // * ORDENAR */
         ordenarListas(lista1);
         ordenarListas(lista2);
 
         System.out.println("Lista 1 Ordenada: " + lista1);
         System.out.println("Lista 2 Ordenada: " + lista2);
 
-        //* UNIR */
+        // * UNIR */
         unirListasOrdenadas(lista1, lista2, lista3);
 
-        System.out.println("Lista 3: " + lista3);
+        System.out.println("Listas : " + lista3);
 
-        //* REMOVER */
+        // * REMOVER */
         removerElementosRepetidos(lista3);
 
         System.out.println("Lista 3 (Sem elementos repetidos): " + lista3);
 
-        //* INVERTER */
+        // * INVERTER */
         inverterLista(lista3);
 
         System.out.println("Lista 3 Invertida: " + lista3);
-
     }
 
     private static void preencherLista(ArrayList<Integer> list) {
@@ -62,6 +60,9 @@ public class App {
 
     private static void unirListasOrdenadas(ArrayList<Integer> lista1, ArrayList<Integer> lista2,
             ArrayList<Integer> lista3) {
+        ordenarListas(lista1);
+        ordenarListas(lista2);
+
         int i = 0, j = 0;
         while (i < lista1.size() && j < lista2.size()) {
             if (lista1.get(i) < lista2.get(j)) {
