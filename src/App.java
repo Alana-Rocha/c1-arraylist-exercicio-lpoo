@@ -3,8 +3,8 @@ import java.util.Random;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        ArrayList<Integer> lista1 = new ArrayList<Integer>(10);
-        ArrayList<Integer> lista2 = new ArrayList<Integer>(10);
+        ArrayList<Integer> lista1 = new ArrayList<Integer>();
+        ArrayList<Integer> lista2 = new ArrayList<Integer>();
         ArrayList<Integer> lista3 = new ArrayList<Integer>();
 
         // * PREENCHER */
@@ -99,15 +99,11 @@ public class App {
     }
 
     private static void inverterLista(ArrayList<Integer> list) {
-        int inicio = 0;
-        int fim = list.size() - 1;
-
-        while (inicio < fim) {
-            int temp = list.get(inicio);
-            list.set(inicio, list.get(fim));
-            list.set(fim, temp);
-            inicio++;
-            fim--;
+        int tamanho = list.size();
+        for (int i = 0; i < tamanho / 2; i++) {
+            int temp = list.get(i);
+            list.set(i, list.get(tamanho - 1 - i));
+            list.set(tamanho - 1 - i, temp);
         }
     }
 
